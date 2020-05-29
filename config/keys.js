@@ -1,5 +1,7 @@
 
+
+
 module.exports = {
-    mongoURI: process.env.MLAB_URI,
-    secretOrKey: process.env.Key
-};
+    mongoURI:"mongodb://localhost:27017/budget-sight",
+    secretOrKey: "erricentrik"
+}
