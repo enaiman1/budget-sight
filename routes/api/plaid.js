@@ -1,25 +1,27 @@
 const express = require("express");
-const plain = require("plaid");
+const plaid = require("plaid");
 const router = express.Router();
 const passport = require("passport");
 const moment = require("moment");
-const mongoose = require("mongoose");
+
+
 
 // Load Account and User models
 const Account = require("../../models/Account");
 const User = require("../../models/User");
 
-const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID;
-const PLAID_SECRET = process.env.PLAID_SECRET;
-const PLAID_PUBLIC_KEY = process.env.PLAID_PUBLIC_KEY;
-
+const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID
+const PLAID_SECRET = process.env.PLAID_SECRET
+const PLAID_PUBLIC_KEY = process.env.PLAID_PUBLIC_KEY
 const client = new plaid.Client(
   PLAID_CLIENT_ID,
   PLAID_SECRET,
   PLAID_PUBLIC_KEY,
   plaid.environments.sandbox,
-  { version: "2018-05-22" }
+  { version: '2019-05-29', clientApp: 'Budget Sight'}
+ 
 );
+
 
 var PUBLIC_TOKEN = null;
 var ACCESS_TOKEN = null;
@@ -33,8 +35,8 @@ router.get(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Account.find({ userId: req.user.id })
-      .then((accounts) => res.json(accounts))
-      .catch((err) => console.log(err));
+      .then(accounts => res.json(accounts))
+      .catch(err => console.log(err));
   }
 );
 
@@ -45,28 +47,27 @@ router.post(
   "/accounts/add",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    // pasre data from request
     PUBLIC_TOKEN = req.body.public_token;
+    console.log(`public token: ${PUBLIC_TOKEN}`)
 
     const userId = req.user.id;
-    // data for specifi bank account info from plaid
+
     const institution = req.body.metadata.institution;
     const { name, institution_id } = institution;
 
-    // due to public token having and experation of 30min we will exchange it for an Access token
-    //  and store the access token into the DB
     if (PUBLIC_TOKEN) {
       client
         .exchangePublicToken(PUBLIC_TOKEN)
-        .then((exchangeResponse) => {
+        .then(exchangeResponse => {
           ACCESS_TOKEN = exchangeResponse.access_token;
           ITEM_ID = exchangeResponse.item_id;
+
           // Check if account already exists for specific user
           Account.findOne({
             userId: req.user.id,
-            institutionId: institution_id,
+            institutionId: institution_id
           })
-            .then((account) => {
+            .then(account => {
               if (account) {
                 console.log("Account already exists");
               } else {
@@ -75,15 +76,30 @@ router.post(
                   accessToken: ACCESS_TOKEN,
                   itemId: ITEM_ID,
                   institutionId: institution_id,
-                  institutionName: name,
+                  institutionName: name
                 });
-                newAccount.save().then((account) => res.json(account));
+
+                newAccount.save().then(account => res.json(account));
               }
             })
-            .catch((err) => console.log(err)); // Mongo Error
+            .catch(err => console.log(err)); // Mongo Error
         })
-        .catch((err) => console.log(err)); // Plaid Error
+        .catch(err => console.log(err)); // Plaid Error
     }
+  }
+);
+
+// @route DELETE api/plaid/accounts/:id
+// @desc Delete account with given id
+// @access Private
+router.delete(
+  "/accounts/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Account.findById(req.params.id).then(account => {
+      // Delete account
+      account.remove().then(() => res.json({ success: true }));
+    });
   }
 );
 
@@ -96,48 +112,32 @@ router.post(
   (req, res) => {
     const now = moment();
     const today = now.format("YYYY-MM-DD");
-
-    // Sets how many days from today.. Change this if you want more transactions
-    const thirtyDaysAgo = now.subtract(30, "days").format("YYYY-MM-DD"); 
+    const thirtyDaysAgo = now.subtract(30, "days").format("YYYY-MM-DD");
 
     let transactions = [];
+
     const accounts = req.body;
 
     if (accounts) {
-        // For each account a user has linked, use that account’s ACCESS_TOKEN to getTransactions from the past 30 days
-      accounts.forEach(function (account) {
+      accounts.forEach(function(account) {
         ACCESS_TOKEN = account.accessToken;
         const institutionName = account.institutionName;
+
         client
           .getTransactions(ACCESS_TOKEN, thirtyDaysAgo, today)
-          .then((response) => {
-            // Push object onto an array containing the institutionName and all transactions
+          .then(response => {
             transactions.push({
               accountName: institutionName,
-              transactions: response.transactions,
+              transactions: response.transactions
             });
-            // Don't send back response till all transactions have been added
+
             if (transactions.length === accounts.length) {
               res.json(transactions);
             }
           })
-          .catch((err) => console.log(err));
+          .catch(err => console.log(err));
       });
     }
-  }
-);
-
-// @route DELETE api/plaid/accounts/:id
-// @desc Delete account with given id
-// @access Private
-router.delete(
-  "/accounts/:id",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    Account.findById(req.params.id).then((account) => {
-      // Delete account
-      account.remove().then(() => res.json({ success: true }));
-    });
   }
 );
 

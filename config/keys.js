@@ -1,7 +1,5 @@
 
-
-
 module.exports = {
-    mongoURI:"mongodb://localhost:27017/budget-sight",
+    mongoURI: process.env.DB_CONNECTION,
     secretOrKey: "erricentrik"
 }
