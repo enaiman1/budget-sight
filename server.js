@@ -7,6 +7,7 @@ require('dotenv').config()
 
 const users = require("./routes/api/users");
 const plaid = require("./routes/api/plaid");
+const transaction = require ("./routes/api/transaction")
 
 const app = express();
 const port = process.env.PORT || 5000; // process.env.port is Heroku's port if you choose to deploy the app there
@@ -33,6 +34,7 @@ require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
 app.use("/api/plaid", plaid);
+app.use("/api/transaction", transaction);
 
 
 // helps serve static assest if in production (deployed to heroku)

@@ -6,9 +6,9 @@ const moment = require("moment");
 
 
 
-// Load Account and User models
+// Load Account model
 const Account = require("../../models/Account");
-const User = require("../../models/User");
+// const User = require("../../models/User");
 
 const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID
 const PLAID_SECRET = process.env.PLAID_SECRET
