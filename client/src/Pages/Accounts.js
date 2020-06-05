@@ -6,9 +6,9 @@ import {
   getTransactions,
   addAccount,
   deleteAccount,
-} from "../../Redux/actions/accountActions"
+} from "../Redux/actions/accountActions"
 
-import { logoutUser } from "../../Redux/actions/authActions"
+import { logoutUser } from "../Redux/actions/authActions"
 import MaterialTable from "material-table"; 
 
 class Accounts extends Component {

@@ -10,7 +10,7 @@ const BudgetSchema = new mongoose.Schema({
      type: Number,
      required:[true, 'Please add a positive or negative number']
  },
- createdAt: {
+ date: {
      type: Date,
      default: Date.now
  }
