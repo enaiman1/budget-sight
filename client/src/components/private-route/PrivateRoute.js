@@ -3,6 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
+// this component setups up private routes for the client side and can only be access when user is logged in
 const PrivateRoute = ({ component: Component, auth, ...rest }) => (
   <Route
     {...rest}

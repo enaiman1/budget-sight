@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import PlaidLinkButton from "react-plaid-link-button";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { logoutUser } from "../../actions/authActions";
-import { getAccounts, addAccount } from "../../actions/accountActions";
+import { logoutUser } from "../../Redux/actions/authActions"
+import { getAccounts, addAccount } from "../../Redux/actions/accountActions"
 import Accounts from "./Accounts";
 import Spinner from "./Spinner.js";
 

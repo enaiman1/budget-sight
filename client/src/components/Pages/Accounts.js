@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import PlaidLinkButton from "react-plaid-link-button";
-// import PlaidLink from "react-plaid-link";
 import { connect } from "react-redux";
 import {
   getTransactions,
   addAccount,
   deleteAccount,
-} from "../../actions/accountActions";
+} from "../../Redux/actions/accountActions"
 
-import { logoutUser } from "../../actions/authActions";
+import { logoutUser } from "../../Redux/actions/authActions"
 import MaterialTable from "material-table"; 
 
 class Accounts extends Component {
