@@ -1,10 +1,10 @@
-// this file is for the user to input Transaction and the Amount
+// this components is for the user to input the transaction and the Amount
 import React, {useState, useContext} from 'react'
 import { GlobalContext } from '../../Context/GlobalState'
-import "./AddTransaction.css"
+import "./TransactionForm.css"
 
 
-export const AddTransaction = () => {
+export const TransactionForm = () => {
   const [ text, setText] = useState('')
   const [amount, setAmount ] = useState(0)
 
