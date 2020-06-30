@@ -1,0 +1,35 @@
+@import "../../main.scss";
+
+label {
+  display: inline-block;
+  margin: 1rem 0;
+  font-family: monospace;
+  font-size: 2rem;
+  color: $color-grey-dark-2;
+}
+
+input[type='text'],
+input[type='number'] {
+  border: 1px solid $color-grey-dark-2;
+  border-radius: 2px;
+  display: block;
+  font-size: 3rem;
+  padding: 1rem;
+  width: 100%;
+  font-family: monospace;
+}
+
+.submitBtn {
+    cursor: pointer;
+  background-color: $color-secondary-dark;
+  box-shadow: var(--box-shadow);
+  color: $color-white;
+  border: 0;
+  display: block;
+  font-size: 2rem;
+  margin: 1rem 0 3rem;
+  padding: 1rem;
+  width: 100%;
+  font-family: monospace;
+}
+

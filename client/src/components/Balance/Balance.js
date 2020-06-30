@@ -4,7 +4,7 @@ import { GlobalContext } from "../../Context/GlobalState";
 import { numberWithCommas } from "../../utils/format"
 import "./Balance.css"
 
-export const Balance = () => {
+const Balance = () => {
     const {transactions} = useContext(GlobalContext)
   
     const amounts = transactions.map(transaction => transaction.amount);
@@ -38,3 +38,5 @@ export const Balance = () => {
         </>
       )
   }
+
+  export default Balance;

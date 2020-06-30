@@ -1,7 +1,8 @@
 // this components is for the user to input the transaction and the Amount
 import React, {useState, useContext} from 'react'
 import { GlobalContext } from '../../Context/GlobalState'
-import "./TransactionForm.css"
+
+import "./TransactionForm.scss"
 
 
 export const TransactionForm = () => {
@@ -24,7 +25,7 @@ export const TransactionForm = () => {
 
     return (
         <>
-           <h3>Add new transaction</h3>
+           <h3 className="form__title">Add new transaction</h3>
       <form onSubmit={onSubmit}>
         <div className="form-control">
           <label htmlFor="text">Text</label>

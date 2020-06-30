@@ -1,0 +1,59 @@
+@import "../../main.scss";
+@import "../../sass/animations.scss";
+
+.features {
+    position: absolute;
+    width: 100%;
+    top: 70%;
+    padding: 4rem;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-secondary-light, 0.7),
+      rgba($color-secondary-dark, 0.6)
+    ),
+    url("../../img/waterfalls.jpg");
+  background-size: cover;
+  margin: 6rem auto;
+  @media only screen and (max-width: $bp-large) {
+    margin: 4rem auto;
+   
+}
+  @media only screen and (max-width: $bp-medium) {
+    margin: 3rem auto;
+   
+}
+
+@media only screen and (max-width: $bp-small) {
+  margin: 0 auto;
+
+}
+
+  
+  
+  }
+  
+  .feature-box {
+    width: 100%;
+    background-color: rgba($color-white, 0.8);
+    
+    font-size: 1.5rem;
+    padding: 2rem;
+  
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: $shadow-main;
+    transition: transform .3s;
+   
+    &__title{
+      font-size: 2rem;
+      margin-bottom: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+    }
+  
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.03);
+    }
+  
+  
+  }

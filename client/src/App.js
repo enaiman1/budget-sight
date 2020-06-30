@@ -7,12 +7,15 @@ import store from "./store";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 // components
-import Navbar from "./components/Navbar/Navbar";
-import Landing from "./components/Pages/Landing";
-import Register from './components/auth/Register';
-import Login from "./components/auth/Login";
+import Register from './components/auth/Register/Register';
+import Login from "./components/auth/Login/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
-import Dashboard from "./components/Pages/Dashboard";
+import Navbar from "./components/Navbar/Navbar";
+import Landing from "./Pages/Landing/Landing";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import Budget from "./Pages/Budget/Budget";
+import Footer from "./components/Footer/Footer"
+// import "./App.scss";
 
 
 // Check for token to keep user logged in
@@ -43,13 +46,16 @@ class App extends Component {
       <Router>
       <div className="App">
         <Navbar />
+        
         <Route exact path="/" component={Landing} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
           <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/budget" component={Budget} />
             </Switch>
-      </div>
+            <Footer />
+            </div>
       </Router>
       </Provider>
     );

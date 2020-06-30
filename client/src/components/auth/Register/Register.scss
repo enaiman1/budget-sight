@@ -1,0 +1,41 @@
+@import "../../../main.scss";
+@import "../../../sass/animations.scss";
+
+.register{
+    
+    height: 60vh;
+    margin: 6rem auto;
+    background: linear-gradient(
+        to bottom right,
+        rgba($color-grey-light-1, 0.9),
+        rgba($color-grey-light-1, 0.5),
+        rgba($color-secondary-dark, 0.3),
+       
+      );
+      box-shadow: 3rem 7rem 9rem rgba($color-black, .1);
+
+    &__back{
+       font-size: 2.5rem;
+       margin-bottom: 2rem;
+       @media only screen and (max-width: $bp-medium) {
+        margin-left: 10rem;
+      }
+       @media only screen and (max-width: $bp-small) {
+        margin-left: 0rem;
+        font-size: 1.5rem;
+      }
+       &:hover{
+        transform: translatex(-1.5rem) scale(1.03);
+       }
+    }
+
+   
+      &__btn{
+        width: "15rem";
+        border-radius: "3px";
+        letter-spacing: "1.5px";
+        margin-top: "1rem";
+        background-color: $color-secondary-dark;
+      }
+     
+} 

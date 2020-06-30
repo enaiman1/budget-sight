@@ -1,0 +1,21 @@
+@import "../../main.scss";
+.calculator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+   right: 10%;
+   
+    
+    width: 100%;
+
+    &__wrapper {
+        width: 40rem;
+        height: 60rem;
+    }
+
+    &__row{
+        display:flex;
+        width: 100%;
+    }
+}

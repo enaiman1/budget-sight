@@ -1,0 +1,29 @@
+@import "../../../main.scss";
+.button-wrapper{
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    background-color:$color-white;
+    color: $color-secondary-dark;
+    flex: 1;
+    outline: 1px solid $color-grey-dark-1;
+}
+
+.operator {
+    background-color: $color-primary;
+    color: $color-white;
+}
+
+.clear-btn{
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    background-color: $color-secondary-light;
+    color: $color-white;
+    flex: 1;
+    outline: 1px solid $color-grey-dark-1;
+}

@@ -1,0 +1,31 @@
+@import "../../main.scss";
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 4rem;
+  font-family: monospace;
+
+  
+
+  li {
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 1.4rem;
+
+   
+  }
+
+  li.plus {
+    border-right: 1rem solid #2ecc71;
+  }
+
+  li.minus {
+    border-right: 1rem solid #c0392b;
+  }
+}

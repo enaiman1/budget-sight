@@ -1,0 +1,75 @@
+@import"../../main.scss";
+
+.budget {
+  font-family: monospace;
+ 
+
+  &__container {
+  width: 80%;
+    margin: 1rem auto;
+    padding: 1rem 3rem;
+    border: 1px solid $color-secondary-dark;
+
+    @media only screen and (max-width: $bp-small) {
+      width: 100%;
+      position: relative;
+      left: 30%;
+      border: none;
+    }
+  }
+
+  &__cal{
+    @media only screen and (max-width: $bp-large) {
+     position: relative;
+     left: 45%;
+    }
+    @media only screen and (max-width: $bp-medium) {
+     position: relative;
+     left: 40%;
+    }
+    // @media only screen and (max-width: $bp-small) {
+    //  position: relative;
+    //  left: 38%;
+    // }
+  }
+
+  &__calc{
+    @media only screen and (max-width: $bp-large) {
+      position: relative;
+      left: 15%;
+     
+    }
+    @media only screen and (max-width: $bp-medium) {
+      position: relative;
+      left: 14%;
+     
+    }
+    @media only screen and (max-width: $bp-small) {
+      position: relative;
+      left: 40%;
+     
+    }
+  }
+}
+
+
+
+.main-btn {
+    width: 185px;
+    letter-spacing: 1.5px;
+    border-radius: 3px;
+    margin-top: 1rem;
+  }
+  .btn:hover {
+    opacity: 0.8;
+  }
+
+  
+  
+ 
+  
+  h1 {
+    letter-spacing: 1px;
+    margin: 0;
+  }
+ 

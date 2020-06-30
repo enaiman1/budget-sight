@@ -1,0 +1,97 @@
+@import "../../main.scss";
+@import "../../sass/animations.scss";
+
+// this is for the story section
+.story{
+    position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 118%;
+  margin: 3rem auto;
+
+   
+  @media only screen and (max-width: $bp-large) {
+    margin: 8rem auto;
+    top: 125%
+}
+  @media only screen and (max-width: $bp-medium) {
+    margin: 10rem auto;
+    top: 125%
+}
+  @media only screen and (max-width: $bp-small) {
+    margin: 14rem auto;
+    top: 140%;
+  
+}
+
+
+
+ &__left{
+   height: 60rem;
+  background-image: linear-gradient( rgba($color-primary, 0.2),rgba($color-secondary-light, 0.5)), url("../../img/story-landing.jpg");
+}
+
+ &__right{
+  
+  height: 60rem;
+  background: linear-gradient(
+    to bottom right,
+    rgba($color-grey-light-1, 0.7),
+    rgba($color-grey-light-1, 0.7),
+    rgba($color-secondary-dark, 0.7),
+   
+  );
+ }
+
+ &__img{
+  // img of couple
+   &--1{
+     position: absolute;
+    top: 15%;
+    left: 14%;
+    max-width: 25%;
+    max-height: 80%;
+     border-radius: 5px;
+     box-shadow: 0 2rem 5rem rgba(#000, .1);
+     @media only screen and (max-width: $bp-medium) {
+      left: 15%
+  }
+   }
+// img of piggy bank
+   &--2{
+   position: absolute;
+    top: 72%;
+    right: 43%;
+    max-width: 28%;
+    max-height: 54%;
+    border-radius: 5px;
+    box-shadow: 0 2rem 5rem rgba(#000, .2);
+    @media only screen and (max-width: $bp-medium) {
+      top: 60%;
+      right: 48%;
+  }
+   }
+ }
+
+ &__header{
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: $color-primary;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+ }
+
+ &__title{
+  font-size: 4.9rem;
+  font-weight: 400;
+  color: $color-grey-dark-1;
+  margin-bottom: 3rem;
+ }
+
+ &__text{
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 4rem;
+}
+
+}

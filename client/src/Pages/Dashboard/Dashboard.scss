@@ -1,0 +1,70 @@
+@import "../../main.scss";
+@import "../../sass/animations.scss";
+
+
+.dashboard {
+  
+    &__header {
+        width: 100%;
+        height: 30vh;
+        background-image: url("../../img/collaboration.jpg");
+        background-size: cover;
+        background-position: top;
+        margin: 2rem auto;
+        border-radius: $smbr;
+        box-shadow: $shadow-main;
+    }
+
+    &__title{
+        background: linear-gradient(
+            to bottom right,
+            rgba($color-grey-light-1, 0.7),
+            rgba($color-secondary-dark, 0.4),
+        );
+        
+    height: 30vh;
+    width: 100%;  
+    border-radius: $smbr;
+    box-shadow: $shadow-main;
+    }
+
+    &__buttonBox{
+        padding: 3rem;
+        background: linear-gradient(
+            to bottom right,
+            rgba($color-grey-light-1, 0.7),
+            rgba($color-secondary-dark, 0.4),
+        );
+        border-radius: $smbr;
+        box-shadow: $shadow-main;
+    }
+
+    &__toBudget {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+
+        @media only screen and (max-width: $bp-medium) {
+            margin-right: 5rem;
+          }
+        @media only screen and (max-width: $bp-small) {
+            margin-right: 20rem;
+            font-size: 1.5rem;
+          }
+ 
+        &:hover{
+         transform: translatex(1.5rem) scale(1.03);
+        }
+    }
+  
+}
+
+.accounts {
+    width: 100%;
+    height: 30vh;
+    background-image: url("../../img/adventure.jpg");
+    background-size: cover;
+    margin: 3rem auto;
+    border-radius: $smbr;
+    box-shadow: $shadow-main;
+}
+
