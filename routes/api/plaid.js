@@ -3,7 +3,7 @@ const plaid = require("plaid");
 const router = express.Router();
 const passport = require("passport");
 const moment = require("moment");
-
+require('dotenv').config()
 
 
 // Load Account model
