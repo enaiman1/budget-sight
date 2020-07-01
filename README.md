@@ -1,9 +1,21 @@
 # Descrption
 This Full stack Mern APP is a finance tracking application using Plaid api in order to combine all of your bank account in one spot. This app also has a expense tracking fueature, so the user will be able to budget their expenses. Passport user authentication that using Javascript Web Tokens has been include for user authentication
 
+<br />
+
+![landing Page](client/src/img/front-page.png)
+
 
 ## Demo
 check out a demo of this app [Here](https://budget-sight.herokuapp.com/ "Demo")
+
+<br />
+
+![landing Page](client/src/img/login1.gif)
+
+<br />
+
+![landing Page](client/src/img/login2.gif)
 
 ## Technologies Used
  | [Mongo](https://www.mongodb.com/ "Mongo")  | [Express](https://expressjs.com/ "express") | [React](https://reactjs.org/ "React") | [Node](nodejs.org "Node") | [Redux](https://redux.js.org/ "Redux") | [passport](http://www.passportjs.org/ "Passport") |[bcrypt](https://www.npmjs.com/package/bcryptjs "bcrypt") | [Json web token](https://www.npmjs.com/package/jsonwebtoken "JWT") | [materialize](https://materializecss.com/ "Materialize")  | 
