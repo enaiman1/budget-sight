@@ -10,7 +10,7 @@ class Calculator extends Component{
   super(props);
 
   this.state = {
-    input: ""
+    input: "0"
   }
 }  
 
