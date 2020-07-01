@@ -21,6 +21,10 @@ Demo coming soon
 3. In config/key.js add your db connection. Alternatively you can create an env file to hide your DB and secretOrkey
 4. To run full app: 
 ```npm run dev```
+5. Since I am keeping the Plaid API in sandbox mode. Plaid presets the username and password
+to login to any account
+Username: user_good
+password: pass-good 
 
 
 

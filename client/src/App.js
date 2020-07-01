@@ -15,7 +15,7 @@ import Landing from "./Pages/Landing/Landing";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Budget from "./Pages/Budget/Budget";
 import Footer from "./components/Footer/Footer"
-// import "./App.scss";
+
 
 
 // Check for token to keep user logged in
