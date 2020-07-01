@@ -10,7 +10,7 @@ const moment = require("moment");
 const Account = require("../../models/Account");
 // const User = require("../../models/User");
 
-const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID
+const PLAID_CLIENT_ID = "5ed13fadd43f2e0012baff5b"
 const PLAID_SECRET = process.env.PLAID_SECRET
 const PLAID_PUBLIC_KEY = process.env.PLAID_PUBLIC_KEY
 const client = new plaid.Client(
