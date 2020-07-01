@@ -74,6 +74,8 @@
 
     &__coin {
       width: 25rem;
+      margin: 3rem auto;
+      
       animation: float 3s ease-in-out infinite;
 
       @media only screen and (max-width: $bp-largest) {
