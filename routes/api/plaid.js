@@ -3,14 +3,14 @@ const plaid = require("plaid");
 const router = express.Router();
 const passport = require("passport");
 const moment = require("moment");
-require('dotenv').config()
+
 
 
 // Load Account model
 const Account = require("../../models/Account");
 // const User = require("../../models/User");
 
-const PLAID_CLIENT_ID = "5ed13fadd43f2e0012baff5b"
+const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID
 const PLAID_SECRET = process.env.PLAID_SECRET
 const PLAID_PUBLIC_KEY = process.env.PLAID_PUBLIC_KEY
 const client = new plaid.Client(
