@@ -1,5 +1,5 @@
 
 module.exports = {
-    mongoURI: process.env.DB_CONNECTION,
+    MONGO_URI: process.env.MONGO_URI,
     secretOrKey: "erricentrik"
 }
